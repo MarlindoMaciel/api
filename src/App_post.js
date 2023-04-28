@@ -7,19 +7,16 @@ export default function App() {
   useEffect(() => {
     api
       .get("/users/romulo27")
-      .then((response) => {
-        setUser(response.data);
-        console.log(response.data)
-      })  
+      .then((response) => setUser(response.data))
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
       });
   }, []);
 
   return (
-    <div className="App">   
-      <p>zUsuário: {user?.login}</p>
-      <p>zBiografia: {user?.bio}</p>
+    <div className="App">
+      <p>xUsuário: {user?.login}</p>
+      <p>xBiografia: {user?.bio}</p>
     </div>
   );
 }
